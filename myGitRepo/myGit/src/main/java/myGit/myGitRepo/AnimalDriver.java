@@ -6,7 +6,7 @@ public class AnimalDriver {
 		// TODO Auto-generated method stub
 		Dog tuffy = new Dog("tuffy","papillon", 5, "white"); 
         System.out.println(tuffy.toString()); 
-        Dog dog = new Dog(false, "milk", 4, "black");
+        Dog dog = new Dog(false, "bone", 4, "black");
 
 		System.out.println("Dog is Vegetarian?" + dog.isVegetarian());
 		System.out.println("Dog eats " + dog.getEats());
