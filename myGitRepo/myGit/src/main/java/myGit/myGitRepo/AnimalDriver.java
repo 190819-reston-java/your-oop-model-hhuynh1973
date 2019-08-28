@@ -1,5 +1,8 @@
 package myGit.myGitRepo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AnimalDriver {
 
 	public static void main(String[] args) {
@@ -19,6 +22,26 @@ public class AnimalDriver {
 		tuffy.eat(" bacon");
 		tuffy.trick();
 
+		List<Animal> animalList = new ArrayList<Animal>();
+		List<Dog> dogList = new ArrayList<Dog>();
+	
+		animalList.add(new Dog("milow", "German Schefer", 3, "black"));
+		animalList.add(new Dog("seto", "papilon", 9, "white"));
+		dogList.add(new Dog(true, "pizza", 4, "brown"));
+		dogList.add(new Dog(false, "bone", 4, "white"));
+		
+		for(Animal a : animalList){
+			System.out.println(a.toString());
+			
+		};
+		
+		for(Dog d : dogList){
+			
+			System.out.println("Eating " + d.getEats() + ", Vegetarian?" + d.isVegetarian());
+			System.out.println("Has " + d.getNoOfLegs() + " legs.");
+			System.out.println("Color is " + d.getColor());
+				
+		};
 	}
 
 }

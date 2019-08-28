@@ -24,7 +24,7 @@ public class Dog extends Animal implements Serializable, doTrick {
 	
   
     public Dog(String name, String breed, int age, String color) {
-		super();
+		//super();
 		this.name = name;
 		this.breed = breed;
 		this.age = age;
@@ -63,6 +63,8 @@ public class Dog extends Animal implements Serializable, doTrick {
                this.getBreed()+"," + this.getAge()+ 
                ","+ this.getColor()); 
     } 
+    
+    
 
 	public void trick() {
 		// TODO Auto-generated method stub
