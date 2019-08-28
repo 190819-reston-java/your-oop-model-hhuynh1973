@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>myGit</groupId>
-  <artifactId>myGitRepo</artifactId>
+  <artifactId>myGit</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>myGitRepo</name>
+  <name>myGit</name>
   <url>http://maven.apache.org</url>
 
   <properties>
