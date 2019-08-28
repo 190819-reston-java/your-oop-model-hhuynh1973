@@ -8,10 +8,10 @@ public class AnimalDriver {
         System.out.println(tuffy.toString()); 
         Dog dog = new Dog(false, "bone", 4, "black");
 
-		System.out.println("Dog is Vegetarian?" + dog.isVegetarian());
-		System.out.println("Dog eats " + dog.getEats());
-		System.out.println("Dog has " + dog.getNoOfLegs() + " legs.");
-		System.out.println("Dog color is " + dog.getColor());
+		System.out.println(tuffy.getName() + " is Vegetarian?" + dog.isVegetarian());
+		System.out.println(tuffy.getName() + " eats " + dog.getEats());
+		System.out.println(tuffy.getName() + " has " + dog.getNoOfLegs() + " legs.");
+		System.out.println(tuffy.getName() + " color is " + dog.getColor());
 		
 		
 		tuffy.speak();
