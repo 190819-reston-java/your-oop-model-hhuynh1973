@@ -4,7 +4,7 @@ public class AnimalDriver {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Dog tuffy = new Dog("tuffy","papillon", 5, "white"); 
+		Dog tuffy = new Dog("toto","chiwawa", 5, "brown"); 
         System.out.println(tuffy.toString()); 
         Dog dog = new Dog(false, "bone", 4, "black");
 
