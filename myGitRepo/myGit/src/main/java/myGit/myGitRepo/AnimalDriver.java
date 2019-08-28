@@ -1,7 +1,9 @@
 package myGit.myGitRepo;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class AnimalDriver {
 
@@ -29,7 +31,7 @@ public class AnimalDriver {
 		animalList.add(new Dog("seto", "papilon", 9, "white"));
 		dogList.add(new Dog(true, "pizza", 4, "brown"));
 		dogList.add(new Dog(false, "bone", 4, "white"));
-		
+		System.out.println("List ArrayList------------");
 		for(Animal a : animalList){
 			System.out.println(a.toString());
 			
@@ -42,6 +44,17 @@ public class AnimalDriver {
 			System.out.println("Color is " + d.getColor());
 				
 		};
+		
+		System.out.println("HashSet--------------");
+		Set<Animal> aniSet = new HashSet<Animal>();
+		
+		aniSet.add(new Dog("anu", "husky", 3, "white"));
+		aniSet.add(new Dog("lah", "bull", 3, "black"));
+		aniSet.add(new Dog("maj", "chiwawa", 3, "brown"));
+		
+		for(Animal a : aniSet) {
+			System.out.println(a.toString());
+		}
 	}
 
 }
