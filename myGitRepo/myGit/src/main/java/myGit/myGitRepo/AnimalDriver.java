@@ -16,6 +16,7 @@ public class AnimalDriver {
 		
 		tuffy.speak();
 		tuffy.eat();
+		tuffy.eat(" bacon");
 
 	}
 

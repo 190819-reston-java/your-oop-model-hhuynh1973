@@ -83,5 +83,11 @@ public class Dog extends Animal implements Serializable, doTrick {
 		System.out.println(this.getName() + " is eating");
 
 	}
+	
+	public void eat(String s) {
+		// TODO Auto-generated method stub
+		System.out.println(this.getName() + " is eating" + s);
+
+	}
 
 }
