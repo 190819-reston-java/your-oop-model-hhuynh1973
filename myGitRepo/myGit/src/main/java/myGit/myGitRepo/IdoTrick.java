@@ -1,6 +1,6 @@
 package myGit.myGitRepo;
 
-public interface doTrick {
+public interface IdoTrick {
 	
 	public void trick();
 

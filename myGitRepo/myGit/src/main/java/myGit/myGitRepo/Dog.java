@@ -2,7 +2,7 @@ package myGit.myGitRepo;
 
 import java.io.Serializable;
 
-public class Dog extends Animal implements Serializable, doTrick {
+public class Dog extends Animal implements Serializable, IdoTrick, Comparable<Dog> {
 	
 	// Instance Variables 
     String name; 
@@ -11,22 +11,24 @@ public class Dog extends Animal implements Serializable, doTrick {
     String color; 
     
     // Constructor Declaration of Class 
-    public Dog(boolean veg, String food, int legs) {
-		super(veg, food, legs);
+    public Dog(boolean veg, String food) {
+		super(veg, food);
 		this.color="White";
 	}
 
-	public Dog(boolean veg, String food, int legs, String color){
-		super(veg, food, legs);
+	public Dog(String name, String breed, boolean veg, String food, String color, int age){
+		super(veg, food);
 		this.color=color;
+		this.age=age;
+		this.name = name;
+		this.breed = breed;
 	}
 
 	
   
-    public Dog(String name, String breed, int age, String color) {
-		//super();
-		this.name = name;
-		this.breed = breed;
+    public Dog(boolean veg, String food, String color,int age) {
+    	super(veg, food);
+		
 		this.age = age;
 		this.color = color;
 	}
@@ -58,7 +60,7 @@ public class Dog extends Animal implements Serializable, doTrick {
     @Override
     public String toString() 
     { 
-        return("Hi my name is "+ this.getName()+ 
+        return("\nHi my name is "+ this.getName()+ 
                ".\nMy breed,age and color are " + 
                this.getBreed()+"," + this.getAge()+ 
                ","+ this.getColor()); 
@@ -90,6 +92,11 @@ public class Dog extends Animal implements Serializable, doTrick {
 		// TODO Auto-generated method stub
 		System.out.println(this.getName() + " is eating" + s);
 
+	}
+	
+	public int compareTo(Dog o) {
+		
+		return this.getName().compareTo(o.getName());
 	}
 
 }

@@ -5,15 +5,14 @@ public abstract class Animal {
 	private boolean vegetarian;
 
 	private String eats;
-
-	private int noOfLegs;
 	
+
 	public Animal(){}
 
-	public Animal(boolean veg, String food, int legs){
+	public Animal(boolean veg, String food){
 		this.vegetarian = veg;
 		this.eats = food;
-		this.noOfLegs = legs;
+		
 	}
 
 	public boolean isVegetarian() {
@@ -32,14 +31,12 @@ public abstract class Animal {
 		this.eats = eats;
 	}
 
-	public int getNoOfLegs() {
-		return noOfLegs;
-	}
-
-	public void setNoOfLegs(int noOfLegs) {
-		this.noOfLegs = noOfLegs;
-	}
 	
+
+	
+	
+
+
 	public abstract void speak();
 	public abstract void eat();
 

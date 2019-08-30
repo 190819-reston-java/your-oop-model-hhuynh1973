@@ -2,59 +2,89 @@ package myGit.myGitRepo;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 public class AnimalDriver {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Dog tuffy = new Dog("toto","chiwawa", 5, "brown"); 
-        System.out.println(tuffy.toString()); 
-        Dog dog = new Dog(false, "bone", 4, "black");
+		 
+        
+        
+        try {
+        	Dog tuffy = new Dog("tuffy","chiwawa", false, "bone", "brown", 9);
+        	//System.out.println(tuffy.getAge());
+        	if(tuffy.getAge()<0) {
+        		throw new IllegalArgumentException("Input cannot be negative.");
+        	}
+        	else {
+        		System.out.println(tuffy.toString());
+        		System.out.println(tuffy.getName() + " is Vegetarian?" + tuffy.isVegetarian());
+        		System.out.println(tuffy.getName() + " eats " + tuffy.getEats());
+        		
+        		tuffy.speak();
+        		tuffy.eat();
+        		tuffy.eat(" bacon");
+        		tuffy.trick();
+        	}
+        	
+        }catch (Exception e) {
+        	
+        		System.out.println(e.getMessage());
+        };
+        
+         
+//       Dog dog = new Dog(false, "bone", "black", 8);
 
-		System.out.println(tuffy.getName() + " is Vegetarian?" + dog.isVegetarian());
-		System.out.println(tuffy.getName() + " eats " + dog.getEats());
-		System.out.println(tuffy.getName() + " has " + dog.getNoOfLegs() + " legs.");
-		System.out.println(tuffy.getName() + " color is " + dog.getColor());
 		
-		
-		tuffy.speak();
-		tuffy.eat();
-		tuffy.eat(" bacon");
-		tuffy.trick();
 
-		List<Animal> animalList = new ArrayList<Animal>();
 		List<Dog> dogList = new ArrayList<Dog>();
+		
 	
-		animalList.add(new Dog("milow", "German Schefer", 3, "black"));
-		animalList.add(new Dog("seto", "papilon", 9, "white"));
-		dogList.add(new Dog(true, "pizza", 4, "brown"));
-		dogList.add(new Dog(false, "bone", 4, "white"));
-		System.out.println("List ArrayList------------");
-		for(Animal a : animalList){
-			System.out.println(a.toString());
-			
-		};
+		dogList.add(new Dog("milow", "German Schefer", false, "bacon", "black", 2));
+		dogList.add(new Dog("seto", "husky", false, "pizza", "white", 4));
+		dogList.add(new Dog("anu", "chiwawa", true, "bread", "brown", 7));
+		dogList.add(new Dog("lu", "husky", true, "broccoli", "black", 1));
 		
-		for(Dog d : dogList){
-			
-			System.out.println("Eating " + d.getEats() + ", Vegetarian?" + d.isVegetarian());
-			System.out.println("Has " + d.getNoOfLegs() + " legs.");
-			System.out.println("Color is " + d.getColor());
+		System.out.println("\nPrint out dogList:");
+		System.out.println(dogList);
+		
+		
+		System.out.println("\nHashSet--------------");
+		Set<Dog> dogSet = new HashSet<Dog>(dogList);
+		
+		dogSet.add(new Dog("anu", "chiwawa", true, "bread", "black", 7));
+		dogSet.add(new Dog("lu", "husky", true, "broccoli", "black", 1));
+		dogSet.add(new Dog("milo", "chiwawa", false, "beef", "black", 5));
+		
+		System.out.println(dogSet);
+		
+		
+		//starting off, Iterable and Iterator:
+				System.out.println("\nIterable and Iterator:");
+				Iterator<Dog> dogIterator = dogList.iterator();
 				
-		};
-		
-		System.out.println("HashSet--------------");
-		Set<Animal> aniSet = new HashSet<Animal>();
-		
-		aniSet.add(new Dog("anu", "husky", 3, "white"));
-		aniSet.add(new Dog("lah", "bull", 3, "black"));
-		aniSet.add(new Dog("maj", "chiwawa", 3, "brown"));
-		
-		for(Animal a : aniSet) {
-			System.out.println(a.toString());
-		}
+				//this is what an enhanced for loop does:
+				while(dogIterator.hasNext()) {
+					Animal a = dogIterator.next();
+					System.out.println(a);
+				}
+				
+				//Sorted Set
+				
+				System.out.println("\nSorted dog Set");
+				SortedSet<Dog> sortedDogSet = new TreeSet<Dog>();
+				
+				System.out.println(sortedDogSet);
+				
+				SortedSet<Dog> ageSortedDogSet = new TreeSet<Dog>(new DogScale());
+				ageSortedDogSet.addAll(dogList);
+				
+				System.out.println(ageSortedDogSet);
 	}
 
 }
